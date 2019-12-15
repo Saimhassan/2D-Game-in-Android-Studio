@@ -11,10 +11,13 @@ public class Flight {
     public boolean isGoingUp = false;
     int toShoot = 0;
     int x,y,width,height,wingCounter = 0, shootCounter = 1;
+    private GameView gameView;
     Bitmap flight1,flight2,shoot1,shoot2,shoot3,shoot4,shoot5;
 
-    Flight(int screenY, Resources res)
+    Flight(GameView gameView, int screenY, Resources res)
     {
+        this.gameView = gameView;
+
         flight1 = BitmapFactory.decodeResource(res,R.drawable.fly1);
         flight2 = BitmapFactory.decodeResource(res,R.drawable.fly2);
 
@@ -56,8 +59,25 @@ public class Flight {
            if (shootCounter == 1)
            {
                shootCounter++;
-
+               return shoot1;
            }
+            if (shootCounter == 2)
+            {
+                shootCounter++;
+                return shoot2;
+            }
+            if (shootCounter == 3)
+            {
+                shootCounter++;
+                return shoot3;
+            }
+            if (shootCounter == 4)
+            {
+                shootCounter++;
+                return shoot1;
+            }
+            shootCounter = 1;
+            return shoot5;
         }
         if (wingCounter == 0) {
             wingCounter++;
