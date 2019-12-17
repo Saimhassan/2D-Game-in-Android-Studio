@@ -74,6 +74,8 @@ public class Flight {
             if (shootCounter == 4)
             {
                 shootCounter++;
+                toShoot--;
+                gameView.newBullet();
                 return shoot1;
             }
             shootCounter = 1;
