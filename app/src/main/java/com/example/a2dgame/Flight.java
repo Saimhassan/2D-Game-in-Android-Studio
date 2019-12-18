@@ -31,8 +31,8 @@ public class Flight {
         height /= 4;
 
 
-      //  width *= (int)screenRatioX;
-     //   height *= (int)screenRatioY;
+        width = (int)(width *screenRatioX);
+        height = (int)(height *screenRatioY);
 
         flight1 = Bitmap.createScaledBitmap(flight1,width,height,false);
         flight2 = Bitmap.createScaledBitmap(flight2,width,height,false);

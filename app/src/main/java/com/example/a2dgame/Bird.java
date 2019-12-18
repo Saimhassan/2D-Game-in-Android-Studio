@@ -5,6 +5,9 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Rect;
 
+import static com.example.a2dgame.GameView.screenRatioX;
+import static com.example.a2dgame.GameView.screenRatioY;
+
 public class Bird {
     public int speed = 20;
     public boolean wasShot = true;
@@ -22,6 +25,9 @@ public class Bird {
 
         width/= 6;
         height/= 6;
+
+        width = (int)(width * screenRatioX);
+        height = (int)(height * screenRatioY);
 
         bird1 = Bitmap.createScaledBitmap(bird1,width,height,false);
         bird2 = Bitmap.createScaledBitmap(bird2,width,height,false);
